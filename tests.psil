@@ -1,0 +1,38 @@
+;Yan Zhuang, Yu Deng
+
+; [ 1 <fun +> [ 1 <fun ->] <fun> 9] : Ltup [Lint,Larw Lint (Larw Lint Lint),Ltup [Lint,Larw Lint (Larw Lint Lint)],Larw Lint Lint,Lint]
+; 1.
+
+(call (call (hastype (fun x (fun y ( tuple 1 + (tuple 1 -) (call + x) (call + x y))))
+		     (Int Int -> (Tuple Int (Int Int -> Int) (Tuple Int (Int Int -> Int)) (Int -> Int) Int)) )
+	    4)
+      5)
+
+;[ 3 4 <fun +> True 5] : Ltup [Lint,Lint,Larw Lint (Larw Lint Lint),Lboo,Lint]
+;2.
+(let (happy (tuple 1 2 3))
+  (sad (hastype (tuple 1 2 - (call <= 1 1) 6) (Tuple Int Int (Int Int -> Int) Bool Int)))
+  (try (x Int) Bool (if (call >= 0 x) (call <= 0 1) (call >= 0 1)))
+  (tryAgain (tuple 3 4 + (call >= 1 1) 5))
+  (hastype ( if (call try 5) sad tryAgain) (Tuple Int Int (Int Int -> Int) Bool Int)))
+
+
+;[ 1 2 4 20 5 <fun +>] : Ltup [Lint,Lint,Lint,Lint,Lint,Larw Lint (Larw Lint Lint)]
+;3.
+
+(let (multiply4 (call multiply2 2))
+  (multiply2 (call * 2))
+  (call (call (hastype (fun x ( fun y (tuple 1 2 multiply4 (call * x y) (call (call + 2 ) 3) + ))) (Int Int -> (Tuple Int Int Int Int Int (Int Int -> Int))))  5)  4))
+
+;4 False: Lboo
+(let (try1 (x Int) (y Int) Bool (if (call = x y) (call try2 (call <= x y) (tuple 1 2)) (call try3 5 (tuple 5 <=))))
+  (try2 (a Bool) (b (Tuple Int Int)) Bool (if a (fetch b (o p) (call >= o p)) (call = 0 1)))
+  (try3 (c Int) (t (Tuple Int (Int Int -> Bool))) Bool (fetch t (u i) (call i u c)))
+  (try4 (v Bool) (n Bool) (m Bool) Bool (if v n m))
+  (call (hastype (fun q (call try4 (call try1 5 6) (call try2 (call >= q 5) (tuple 5 6)) (call try3 q (tuple 5 >=)))) (Int -> Bool)) 10)
+  )
+
+;5 3:Lint
+(let (x (y Int) (b Int) Int (call (hastype (fun z (call z y b)) ((Int Int -> Int) -> Int)) + ))
+  (call x 5 (call (hastype (fun p (call p (hastype (fetch (tuple 1 2) (o l) (call + o l)) Int) (hastype (fetch (tuple + - 5 6) (r f v g) (call r (call f v g) g)) Int))) ((Int Int -> Int) -> Int)) - ) ) )
+					  
