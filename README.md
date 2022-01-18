@@ -6,4 +6,4 @@
 </div>
 
 # Details
-<b> Please consult <code> psil.pdf </code> located in this repo </b>
+<b> Please consult <code>psil.pdf</code> located in this repo </b>
