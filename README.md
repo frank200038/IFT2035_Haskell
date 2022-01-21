@@ -1,6 +1,6 @@
 # IFT2035_TP1
 <div>
-<b> Course </b>: IFT2035 - Introduction to Programming Language <br>
+<b> Course </b>: IFT2035 - Programming Languages Principles <br>
 <b> Professor </b>: Stefan Monnier  <br>
 <b> Language used:</b> Haskell and LaTEX for report <br>
 </div>
